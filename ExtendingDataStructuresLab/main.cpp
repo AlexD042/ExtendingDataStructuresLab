@@ -36,18 +36,18 @@ class Deque {
 private:
 	std::vector<T> d;
 public:
-	void pushBack(T item) {
+	void push_back(T item) {
 		d.push_back(item);
 	}
-	T popBack() {
+	T pop_back() {
 		T lastElement = d.back();
 		d.pop_back();
 		return lastElement;
 	}
-	void pushFront(T item) {
+	void push_front(T item) {
 		d.insert(d.begin(), item);
 	}
-	T popFront() {
+	T pop_front() {
 		T firstElement = d.at(0);
 		d.erase(d.begin());
 		return firstElement;
@@ -68,7 +68,7 @@ int main() {
 	std::cout << s.pop() << ", ";
 	std::cout << s.pop() << ", ";
 	std::cout << s.pop() << ", ";
-	std::cout << s.pop();
+	std::cout << s.pop() << '\n';
 
 	// FIFO
 	Queue<int> q;
@@ -77,25 +77,25 @@ int main() {
 	q.push(3);
 	q.push(4);
 	q.push(5);
-	std::cout << "\n\nElements: ";
+	std::cout << "\nElements: ";
 	std::cout << q.pop() << ", ";
 	std::cout << q.pop() << ", ";
 	std::cout << q.pop() << ", ";
 	std::cout << q.pop() << ", ";
-	std::cout << q.pop();
+	std::cout << q.pop() << '\n';
 
 	Deque<int> d;
-	d.pushFront(1);
-	d.pushFront(2);
-	d.pushBack(3);
-	d.pushBack(4);
-	d.pushBack(5);
-	std::cout << "\n\nElements: ";
-	std::cout << d.popFront() << ", ";
-	std::cout << d.popBack() << ", ";
-	std::cout << d.popFront() << ", ";
-	std::cout << d.popFront() << ", ";
-	std::cout << d.popBack();
+	d.push_front(1);
+	d.push_front(2);
+	d.push_back(3);
+	d.push_back(4);
+	d.push_back(5);
+	std::cout << "\nElements: ";
+	std::cout << d.pop_front() << ", ";
+	std::cout << d.pop_back() << ", ";
+	std::cout << d.pop_front() << ", ";
+	std::cout << d.pop_front() << ", ";
+	std::cout << d.pop_back() << '\n';
 
 	return 0;
 }
